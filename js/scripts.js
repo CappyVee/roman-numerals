@@ -1,86 +1,75 @@
 // ////business logic
-// var numberFirst = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-// var numeralsFirst = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
-// var numberSecond = ["10", "20", "30", "40", "50", "60", "70", "80", "90"];
-// var numeralsSecond = ["X", "XX", "XX[DON'T FORGET TO ADD ANOTHER X]", "XL", "L", "LX", "LXX", "LXXX", "XC"];
-// var numberThird = ["100", "200", "300", "400", "500", "600", "700", "800", "900"];
-// var numeralsThird = ["C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
-// var numberFourth = ["1000", "2000", "3000"];
-// var numeralsFourth = ["M", "MM", "MMM"];
-// debugger;
-
 // var numberTranslator = function(number) {
-//
-//   var number = 6;
-//
-//   var indexNumber = (numberStr.length-1);
-//   alert(indexNumber);
-//
-//   if (indexNumber === 0) {
-//     var digitFirst = number.slice(0,1);
-//   } else if (indexNumber === 1) {
-//     var digitFirst = number.slice(0,1);
-//     var digitSecond = number.slice(1,2);
-//   } else if (indexNumber === 2) {
-//     var digitFirst = number.slice(0,1);
-//     var digitSecond = number.slice(1,2);
-//     var digitThird = number.slice(2,3);
-//   } else if (indexNumber === 3) {
-//     var digitFirst = number.slice(0,1);
-//     var digitSecond = number.slice(1,2);
-//     var digitThird = number.slice(2,3);
-//     var digitFourth = number.slice(3,4);
-//   }
-//   if (digitFirst === 1) {
-//     digitFirst.split("1").join("I");
-//   } else if (digitFirst === 2) {
-//     digitFirst.split("2").join("II");
-//   } else if (digitFirst === 3) {
-//     digitFirst.split("3").join("III");
-//   } else if (digitFirst === 4) {
-//     digitFirst.split("4").join("IV");
-//   } else if (digitFirst === 5) {
-//     digitFirst.split("5").join("V");
-//   } else if (digitFirst === 6) {
-//     digitFirst.split("6").join("VI");
-//   } else if (digitFirst === 7) {
-//     digitFirst.split("7").join("VII");
-//   } else if (digitFirst === 8) {
-//     digitFirst.split("8").join("VIII");
-//   } else if (digitFirst === 9) {
-//     digitFirst.split("9").join("IX");
-// }
-// }//fxn end
+
+// var ones = ["I", "V", "X"]
+// var tens = ["X", "L", "C"]
+// var hundreds = ["C", "D", "M"]
+// var thousands = ["M"]
+
+var romanNumerals = ["M", "CM", "D", "DC", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+var decimalPoints = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+var answer = [];
+
+
 //////user logic
 $(document).ready(function(){
   $("#inputForm").submit(function(event){
     event.preventDefault();
     var number = parseInt($("#userInput").val());
     var numberStr = $("#userInput").val();
+    var numArray = numberStr.split("").reverse();
+    var romanArray = [];
 
-    //cannot accept numbers higher than 3999
-    if (number < 1) {
-      alert("enter larger number");
-    } else if (number < 10 ) {
-      var firstNumber = parseInt(numberStr.slice(0,1));
-      alert(firstNumber);
-    } else if (number < 100) {
-      var firstNumber = parseInt(numberStr.slice(0,1));
-      var secondNumber = parseInt(numberStr.slice(1,2));
-      alert(firstNumber + " " + secondNumber);
-    } else if (number < 1000) {
-      var firstNumber = parseInt(numberStr.slice(0,1));
-      var secondNumber = parseInt(numberStr.slice(1,2));
-      var thirdNumber = parseInt(numberStr.slice(2,3));
-      alert(firstNumber + " " + secondNumber + " " + thirdNumber);
-    } else if (number < 4000) {
-      var firstNumber = parseInt(numberStr.slice(0,1));
-      var secondNumber = parseInt(numberStr.slice(1,2));
-      var thirdNumber = parseInt(numberStr.slice(2,3));
-      var fourthNumber = parseInt(numberStr.slice(3,4));
-      alert(firstNumber + " " + secondNumber + " " + thirdNumber + " " + fourthNumber);
-    } else
-    alert("Please enter a number under 4000");
+    var places = numberStr.length; //determines if it's 1s, 10s, 100s, 1000s
+
+
+    for (var i = 0; i < places; i++)
+
+    if (places === 1) {
+    } else if (places === 2) {
+
+    } else if (places === 3) {
+
+    } else if (places === 4) {
+
+    }
+
+
+
+    // if (number < 1) {
+    //   alert("enter larger number");
+    // } else if (number < 10 ) {
+    //   var firstNumber = parseInt(numberStr.slice(0,1));
+    //   romanArray.push(firstNumber);
+    //   alert(romanArray);
+    // } else if (number < 100) {
+    //   var firstNumber = parseInt(numberStr.slice(0,1));
+    //   var secondNumber = parseInt(numberStr.slice(1,2));
+    //   romanArray.push(firstNumber,secondNumber);
+    //   alert(firstNumber + "" + secondNumber);
+    //   alert(romanArray);
+    // } else if (number < 1000) {
+    //   var firstNumber = parseInt(numberStr.slice(0,1));
+    //   var secondNumber = parseInt(numberStr.slice(1,2));
+    //   var thirdNumber = parseInt(numberStr.slice(2,3));
+    //   romanArray.push(firstNumber,secondNumber,thirdNumber);
+    //   alert(firstNumber + "" + secondNumber + "" + thirdNumber);
+    // } else if (number < 4000) {
+    //   var firstNumber = parseInt(numberStr.slice(0,1));
+    //   var secondNumber = parseInt(numberStr.slice(1,2));
+    //   var thirdNumber = parseInt(numberStr.slice(2,3));
+    //   var fourthNumber = parseInt(numberStr.slice(3,4));
+    //   romanArray.push(firstNumber,secondNumber,thirdNumber,fourthNumber);
+    //   alert(firstNumber + "" + secondNumber + "" + thirdNumber + "" + fourthNumber);
+    // } else
+    // alert("Please enter a number under 4000");
+    //
+    //
+    //
+    // if (number === 1) {
+    //    var numeral = numberStr.split("1").join("I");
+    //     alert(numeral);
+    //   }
 
     // if (number > 4000 || number < 1) {
     //   alert("Please enter a number between 1 and 3999.")
