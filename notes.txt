@@ -1,0 +1,7 @@
+SPECIFICATIONS
+BEHAVIOR | INPUT | OUTPUT
+cannot accept non-integers | "abc" | "NOPE!"
+cannot accept numbers higher than 3999 | "4000" | "NOPE!"
+add value of all symbols | "3" | "III"
+no more than three identical symbols in a row | "4" | "IV"
+separate ones, tens, hundreds, and thousands | 99 | "XCIX"
