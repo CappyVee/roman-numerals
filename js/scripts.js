@@ -11,20 +11,12 @@ var numeralsFourth = ["M", "MM", "MMM"];
 
 
 
-
 //////user logic
 $(document).ready(function(){
   $("#inputForm").submit(function(event){
     event.preventDefault();
     var number = parseInt($("#userInput").val());
 
-    // cannot accept non-integers
-    if (number !== NaN) {
-      var notice = number;
-    } else {
-        var notice = "NOPE!"
-    }
-    alert(notice);
 
     // cannot accept numbers higher than 3999
 
